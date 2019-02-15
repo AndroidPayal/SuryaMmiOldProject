@@ -1,0 +1,177 @@
+<resources>
+    <string name="app_name">Surya Elevators MMI</string>
+
+    <!--  BluetoothChat -->
+    <string name="send">Send</string>
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled.</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="action_bluetooth">on/off</string>
+    <!-- <string name="title_connected_to"><xliff:g id="device_name">%1$s</xliff:g></string>-->
+    <string name="title_connected_to">Connected</string>
+    <string name="title_not_connected">not connected</string>
+
+    <!--  DeviceListActivity -->
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+
+    <string name="nav_write_mode_enable">Write Mode Enable</string>
+    <string name="logout">Logout</string>
+    <string name="bt_status">BT Status</string>
+
+    <string name="signup">Sign Up</string><string name="signup_data">For Registration visit on www.theliftiot.net or log on to www.radioknit.com or contact on contact@radioknit.com</string>
+
+    <string-array name="arr_display_pattern">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>A</item>
+        <item>b</item>
+        <item>C</item>
+        <item>d</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>M</item>
+        <item>L</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="arr_display_pattern_custom">
+        <item>b</item>
+        <item>G</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="arr_device_id">
+        <item>LPB 0 Floor</item>
+        <item>LPB 1 Floor</item>
+        <item>LPB 2 Floor</item>
+        <item>LPB 3 Floor</item>
+        <item>LPB 4 Floor</item>
+        <item>LPB 5 Floor</item>
+        <item>LPB 6 Floor</item>
+        <item>LPB 7 Floor</item>
+        <item>LPB 8 Floor</item>
+        <item>LPB 9 Floor</item>
+        <item>LPB 10 Floor</item>
+        <item>LPB 11 Floor</item>
+        <item>LPB 12 Floor</item>
+        <item>LPB 13 Floor</item>
+        <item>LPB 14 Floor</item>
+        <item>LPB 15 Floor</item>
+        <item>LPB 16 Floor</item>
+        <item>LPB 17 Floor</item>
+        <item>LPB 18 Floor</item>
+        <item>LPB 19 Floor</item>
+        <item>LPB 20 Floor</item>
+        <item>LPB 21 Floor</item>
+        <item>LPB 22 Floor</item>
+        <item>LPB 23 Floor</item>
+        <item>LPB 24 Floor</item>
+        <item>LPB 25 Floor</item>
+        <item>LPB 26 Floor</item>
+        <item>LPB 27 Floor</item>
+        <item>LPB 28 Floor</item>
+        <item>LPB 29Floor</item>
+        <item>LPB 30 Floor</item>
+        <item>LPB 31 Floor</item>
+        <item>COP - 1</item>
+        <item>COP - 2</item>
+    </string-array>
+
+    <string-array name="arr_deviceid_programable_parameter">
+        <item>Encoder PPR</item>
+        <item>Travel length 1</item>
+        <item>Travel length 2</item>
+        <item>Travel length 3</item>
+        <item>Slow speed distance 1</item>
+        <item>Slow speed distance 2</item>
+        <item>Slow speed distance 3</item>
+        <item>Slow speed distance 4</item>
+        <item>Diameter of main pulley</item>
+        <item>Gear box ratio</item>
+        <item>Common UP Slip</item>
+        <item>Common DN Slip</item>
+        <item>R.P.M. Setting 1</item>
+        <item>R.P.M. Setting 2</item>
+        <item>R.P.M. Setting 3</item>
+    </string-array>
+
+
+    <string-array name="arr_flr_call_blocking">
+        <item>No Call Blocking</item>
+        <item>Only Car Call Block</item>
+        <item>Hall Up Call Block</item>
+        <item>Car + Hall Up Call Block</item>
+        <item>Hall Down Call Block</item>
+        <item>Car + Hall Down Calls Block</item>
+        <item>Car + Hall Up + Hall Down Calls Block</item>
+        <item>Hall Up + Down Calls Block</item>
+    </string-array>
+
+
+
+    <string-array name="arr_program_code">
+        <item>Stop Delay</item>
+        <item>Transit Delay</item>
+        <item>Brake High Pulse</item>
+        <item>No. of Floors</item>
+        <item>Door Open Time</item>
+        <item>Door Close Time</item>
+        <item>Door Keep Open Time</item>
+        <item>Clock Divide</item>
+        <item>Control Bit</item>
+        <item>Fire Floor</item>
+        <item>Home Floor</item>
+        <item>Compulsory Stop</item>
+        <item>Parking Floor</item>
+    </string-array>
+
+    <!-- <string-array name="arr_speed_selection">
+         <item>Speed Command when lift is stopped</item>
+         <item>Speed Command in power up mode on hit of slow dn SW</item>
+         <item>Speed Command in power up mode with closed slow dn SW</item>
+         <item>Maintenance Speed/Relevel Speed in normal mode</item>
+         <item>Speed command in ARD mode</item>
+         <item>Speed command on hit of slow dn Sw in high speed mode</item>
+         <item>Speed command in deacceleration mode</item>
+         <item>Run Speed 1</item>
+         <item>Run Speed 2</item>
+         <item>Run Speed 3</item>
+         <item>Run Speed 4</item>
+     </string-array>-->
+
+    <string-array name="arr_speed_selection">
+        <item>When lift is stopped</item>
+        <item>In power up mode on hit of slow dn SW</item>
+        <item>In power up mode with closed slow dn SW</item>
+        <item>Maintenance Speed/Relevel Speed in normal mode</item>
+        <item>In ARD mode</item>
+        <item>On hit of slow dn Sw in high speed mode</item>
+        <item>In deacceleration mode</item>
+        <item>Run Speed 1</item>
+        <item>Run Speed 2</item>
+        <item>Run Speed 3</item>
+        <item>Run Speed 4</item>
+    </string-array>
+
+</resources>

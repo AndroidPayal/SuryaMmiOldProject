@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_marginStart="10dp">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1.84"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvfloor_blocking_FloorNumber"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="18sp"/>
+
+<!--    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:id="@+id/tvfloor_blocking_Data"
+        android:gravity="center"
+        android:textSize="18sp"/>-->
+
+    <CheckBox
+        android:layout_marginTop="15dp"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:clickable="false"
+        android:id="@+id/checkBoxHU"
+        android:button="@xml/custom_chkbox_def"
+       />
+
+    <CheckBox
+        android:layout_marginTop="15dp"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxHD"
+        android:gravity="center"
+        android:clickable="false"
+        android:button="@xml/custom_chkbox_def"
+         />
+
+    <CheckBox
+        android:layout_marginTop="15dp"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxCC"
+        android:clickable="false"
+        android:gravity="center"
+        android:button="@xml/custom_chkbox_def"
+         />
+
+</LinearLayout>
