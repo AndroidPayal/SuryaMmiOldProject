@@ -109,8 +109,8 @@ public class SetDateTimeActivity extends AppCompatActivity {
                     sum = sum + 6;
                 }
                 String sumHex = String.format("%04x", sum+6);
-//                Log.e(TAG, " Sum =  "+ sum);
-//                Log.e(TAG, " sumHex =  "+ sumHex);
+                Log.e(TAG, " Sum =  "+ sum);
+                Log.e(TAG, " sumHex =  "+ sumHex);
                 String msb = sumHex.substring(1,2);
 //                Log.e(TAG,"Msb = "+ msb);
                 String lsb = sumHex.substring(2,4);
@@ -215,7 +215,7 @@ public class SetDateTimeActivity extends AppCompatActivity {
 //                Log.e(TAG, "br2 = "+ new String(br2));
 
                 String asciiString1  = String.format("%04x", b1).substring(2,4)+String.format("%04x", b2).substring(2,4)+String.format("%04x", b3).substring(2,4)+String.format("%04x", b4).substring(2,4)+String.format("%04x", b5).substring(2,4)+String.format("%04x", b6).substring(2,4) ;
-//                Log.e(TAG, "asciiString = "+asciiString);
+                Log.e(TAG, "asciiString = "+asciiString);
 /*                int sumSendString1  = 0;
                 for(int i = 0; i<asciiString1.length(); i++){
                     sumSendString1 = sumSendString1 + Integer.parseInt(String.format("%04x", (int) asciiString1.charAt(i)).substring(2,4));
