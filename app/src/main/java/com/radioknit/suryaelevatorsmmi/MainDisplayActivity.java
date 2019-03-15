@@ -75,7 +75,13 @@ public class MainDisplayActivity extends AppCompatActivity {
     }
 
     private void registerEvent() {
-
+        btnDoorOpen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UtilsBluetooth.toAscii("abcd");//61626364
+                UtilsBluetooth.hexToASCII("12f32002194492");
+            }
+        });
     }
 
     private void createObj() {

@@ -58,8 +58,15 @@ public class UtilsBluetooth {
             int index = 0;
             for (int i = 0; i < len; i += 2) {
                 result[index] = (byte) Integer.parseInt(hex.substring(i, i + 2), 16);
+
+                Log.e("Tag_loop", "toHex: index ="+index + " i = " + i + " val= " + result[index] );
+
                 index++;
             }
+            for (int i = 0;i<result.length;i++)
+                Log.e("Tag_final", "toHex: final = " + result[i] );
+
+
         } catch (NumberFormatException e) {
             log("toHex NumberFormatException: " + e.getMessage());
 
@@ -68,6 +75,48 @@ public class UtilsBluetooth {
         }
         return result;
     }
+
+    public static long toAscii(String s){
+        StringBuilder sb = new StringBuilder();
+        String ascString = null;
+        long asciiInt;
+        for (int i = 0; i < s.length(); i++){
+            //sb.append((int)s.charAt(i));
+            int asciiVal=(int)s.charAt(i);
+            sb.append(Integer.toHexString(asciiVal));
+            char c = s.charAt(i);
+        }
+        Log.d("Tag_ascii", "toAscii: final ascii hex=" + sb.toString() );
+        ascString = sb.toString();
+
+        asciiInt = Long.parseLong(ascString);
+        Log.d("Tag_ascii", "toAscii: "+asciiInt+"\nasciiStr="+ascString);
+        return asciiInt;
+    }
+
+    public static String hexToASCII(String hex)
+    {
+        // initialize the ASCII code string as empty.
+        String ascii = "";
+
+        for (int i = 0; i < hex.length(); i += 2) {
+
+            // extract two characters from hex string
+            String part = hex.substring(i, i + 2);
+
+            // change it into base 16 and typecast as the character
+            char ch = (char)Integer.parseInt(part, 16);
+
+            // add this char to final ASCII string
+            ascii = ascii + ch;
+        }
+
+        Log.d("Tag_ascii", "hexToASCII: "+ascii);
+        return ascii;
+    }
+
+
+
     // ============================================================================
     public static String  toHex11(String hex) {
 

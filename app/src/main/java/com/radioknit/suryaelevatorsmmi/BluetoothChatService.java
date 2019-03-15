@@ -34,8 +34,8 @@ public class BluetoothChatService {
 			.fromString("0001101-0000-1000-8000-00805f9b34fb");
 
 	// INSECURE "8ce255c0-200a-11e0-ac64-0800200c9a66"
-	// SECURE "fa87c0d0-afac-11de-8a39-0800200c9a66"
-	// SPP "0001101-0000-1000-8000-00805F9B34FB"
+	// SECURE "fa87c0d0-afac-11de-8a39-0800200c9a66" //for connection to android peer generate own UUID
+	// SPP "0001101-0000-1000-8000-00805F9B34FB" //for BT serial board use this well known spp UUID
 
 	// Member fields
 	private final BluetoothAdapter mAdapter;

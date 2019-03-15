@@ -82,40 +82,52 @@ public class SetDateTimeActivity extends AppCompatActivity {
                 String dateCommand =  "12F331031700";
                 String timeCommand =  "12F2"+mHour+mMinute+"0000";
 
-                String str1 = Integer.toHexString(18);
-                String str2 = Integer.toHexString(243);
+                char a= 18;
+                Log.d(TAG, "char val= " +a  + "     "+ (char) 243+"     "+(char)68);
+
+                String str1 = Integer.toHexString(18); // = []
+                String str2 = Integer.toHexString(243); // = o'
 //                String str3 = Integer.toHexString(mday);
 //                String str4 = Integer.toHexString(mmonth +1);
                 String str3 = String.valueOf(mday);
                 String str4 = String.valueOf(mmonth + 1);
-                String yr = String.valueOf(myear).substring(2,4);
-//                Log.e(TAG, "Yr = "+ yr);
+                String yr = String.valueOf(myear).substring(2,4);//20[19]
+                Log.e(TAG, "Yr = "+ yr);
 //                String str5 = Integer.toHexString(Integer.parseInt(yr));
                 String str5 = String.valueOf(yr);
-                String str6 = Integer.toHexString(68);
+                String str6 = Integer.toHexString(68);//= D
 
 
                 int sum = 0;
-//                Log.e(TAG, "day1 = "+mday+" month1 = "+ (mmonth+1)+" year1 = "+Integer.parseInt(yr));
+                Log.e(TAG, "day1 = "+mday+" month1 = "+ (mmonth+1)+" year1 = "+Integer.parseInt(yr));
                 sum = sum+ 18+243+mday+(mmonth+1)+Integer.parseInt(yr)+68;
+                Log.e(TAG, "sum = "+sum );
+
                 if(Integer.parseInt(yr) >= 10){
                     sum = sum +6;
                 }
-
                 if((mmonth+1) >= 10){
                     sum = sum +6;
                 }
                 if(mday >= 10){
                     sum = sum + 6;
                 }
-                String sumHex = String.format("%04x", sum+6);
-                Log.e(TAG, " Sum =  "+ sum);
+                String sumHex = String.format("%04x", sum+6);//converting sum+6(decimal)->hexadecimal
+                //for this conversion sum+6 -> binary(by lcm) -> hexadecimal (by 4 bit pair of binary)
+
+
+                Log.e(TAG, " Sum =  "+ sum); //ex: sum+6 = 388 , sumHex = 0184
                 Log.e(TAG, " sumHex =  "+ sumHex);
-                String msb = sumHex.substring(1,2);
-//                Log.e(TAG,"Msb = "+ msb);
+
+                String msb = sumHex.substring(1,2);//ex: sumHex = 0184 , msb = 1 , lsb = 84
+                Log.e(TAG,"Msb = "+ msb);
+
                 String lsb = sumHex.substring(2,4);
-//                Log.e(TAG,"lsb = "+ lsb);
+                Log.e(TAG,"lsb = "+ lsb);
+                Log.d(TAG, "onClick: msb = "+msb + " lsb = " + lsb);
+
                 int msb1 = (Integer.parseInt(msb) | 50);
+                Log.d(TAG, "onClick: msb int = "+msb1);
 
                 String finalString = str1+str2+str3+str4+str5+str6+lsb+msb1;
 
@@ -128,17 +140,19 @@ public class SetDateTimeActivity extends AppCompatActivity {
                 int a7 = Integer.parseInt(lsb,16);
                 int a8 = Integer.parseInt(String.valueOf(msb1),16);
 
-//                Log.e(TAG, " a3 = "+ a3 +" a4 = "+ a4 +" a5 = "+a5);
+                Log.e(TAG, " str1 = "+ str1 +" str2 = "+ str2 +" str3 = "+str3 +" str4 = "+str4+" str5 = "+ str5 +" str 6= "+str6 + " str8="+ msb1);
+
+                Log.e(TAG, " a1="+a1 +" a2="+a2 + " a3 = "+ a3 +" a4 = "+ a4 +" a5 = "+a5 +" a6 = "+a6 +" a7 = "+a7 +" a8 = "+a8);
 
                 int[] sendValChkSum={a1, a2, a3, a4, a5, a6};
 
                 String strChkSum= CustomCalculate.calculateChkSum(sendValChkSum);
 
                 byte[] br1 = {(byte)0x12,(byte) 0xf3 , (byte) a5,(byte) a4,(byte)a3,(byte) a6,(byte) a7, (byte) a8};
-//                Log.e(TAG, "br1 = "+ new String(br1));
+                Log.e(TAG, "br1 = "+ new String(br1));
 
                 String asciiString  = String.format("%04x", a1).substring(2,4)+String.format("%04x", a2).substring(2,4)+String.format("%04x", a3).substring(2,4)+String.format("%04x", a4).substring(2,4)+String.format("%04x", a5).substring(2,4)+String.format("%04x", a6).substring(2,4) ;
-//                Log.e(TAG, "asciiString = "+asciiString);
+                Log.e(TAG, "asciiString = "+asciiString  + "checksum = "+strChkSum);
                 /*int sumSendString  = 0;
                 for(int i = 0; i<asciiString.length(); i++){
                     sumSendString = sumSendString + Integer.parseInt(String.format("%04x", (int) asciiString.charAt(i)).substring(2,4));
@@ -146,7 +160,7 @@ public class SetDateTimeActivity extends AppCompatActivity {
                 Log.e(TAG, "sumSendString = "+ sumSendString);*/
                 //asciiString = asciiString +String.valueOf(sumSendString).substring(1,3)+ "\r";
                 asciiString = asciiString + strChkSum + "\r";
-                Log.e(TAG, "asciiString = "+ asciiString);
+                Log.e(TAG, "asciiString final = "+ asciiString);
 
                 if (isConnected()) {
 //                  connector.write(br1);
@@ -187,7 +201,7 @@ public class SetDateTimeActivity extends AppCompatActivity {
 //                Log.e(TAG,"Msb time= "+ msb2);
                 String lsb2 = sumHex2.substring(2,4);
 //                Log.e(TAG,"lsb time = "+ lsb2);
-                int msb3 = (Integer.parseInt(msb2) | 50);
+                int msb3 = (Integer.parseInt(msb2) | 50); //performing bitwise or operation
 //                Log.e(TAG, "OR Result  time =" +(Integer.parseInt(msb2) | 50));
 
 
